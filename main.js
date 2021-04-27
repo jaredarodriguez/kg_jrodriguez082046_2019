@@ -10,6 +10,8 @@ Given an array: [10, 300, 5], print "OneZero, ThreeZeroZero,Five" into stdout.
 
 */
 
+const args = process.argv.slice(2);
+
 let numMap = new Map();
 
 numMap.set('1', 'One');
@@ -23,7 +25,7 @@ numMap.set('8', 'Eight');
 numMap.set('9', 'Nine');
 numMap.set('0', 'Zero');
 
-function convertArr(arr) {
+const convertArr = (arr) => {
   let phoneticString = '';
 
   arr.forEach((num) => {
@@ -34,5 +36,7 @@ function convertArr(arr) {
     phoneticString += ',';
   });
 
-  return phoneticString.slice(0, -1);
-}
+  console.log(phoneticString.slice(0, -1));
+};
+
+convertArr(args);
